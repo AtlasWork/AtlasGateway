@@ -1,4 +1,4 @@
-package com.simcoder.uber;
+package com.atlas.drive;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.simcoder.uber", appContext.getPackageName());
+        assertEquals("com.atlas.drive", appContext.getPackageName());
     }
 }

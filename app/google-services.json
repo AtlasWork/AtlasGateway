@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "747684986209",
+    "firebase_url": "https://atlasgateway-01.firebaseio.com",
+    "project_id": "atlasgateway-01",
+    "storage_bucket": "atlasgateway-01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:747684986209:android:3a874bf683f3ee66",
+        "android_client_info": {
+          "package_name": "com.atlas.drive"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "747684986209-n3gk46vmvgduqneeu7ldphsao747d0pp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.atlas.drive",
+            "certificate_hash": "fca045f4263dd351c192ff60415ee776dea8d9cd"
+          }
+        },
+        {
+          "client_id": "747684986209-d78kciui82loujrh0i7q1ok41je99gbb.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "747684986209-d78kciui82loujrh0i7q1ok41je99gbb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNg6LUoLykuVatQulvhWcX6QkRsu2E4gY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "747684986209-d78kciui82loujrh0i7q1ok41je99gbb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
