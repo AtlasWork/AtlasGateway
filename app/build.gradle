@@ -3,10 +3,10 @@ apply plugin: 'com.android.application'
 android {
     signingConfigs {
         config {
-            keyAlias 'atlasdrive'
-            keyPassword 'Plismore1!'
-            storeFile file('/root/Documents/AtlasGateway-Android/atlasdrive.keystore')
-            storePassword 'Plismore1!'
+            keyAlias 'atlasdrivedebug'
+            keyPassword 'Atlas1!debug'
+            storeFile file('/root/Documents/AtlasGateway-Android/atlasdrivedebug.keystore')
+            storePassword 'Atlas1!debug'
         }
     }
     compileSdkVersion 27
@@ -40,7 +40,7 @@ dependencies {
     //noinspection GradleCompatible
     compile 'com.android.support:appcompat-v7:26.1.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.google.firebase:firebase-core:11.6.0'
+    compile 'com.google.firebase:firebase-core:16.0.0'
     compile 'com.google.firebase:firebase-database:11.6.0'
     compile 'com.google.firebase:firebase-auth:11.6.0'
     compile 'com.google.firebase:firebase-storage:11.6.0'
@@ -53,17 +53,5 @@ dependencies {
     compile 'com.paypal.sdk:paypal-android-sdk:2.15.3'
     testCompile 'junit:junit:4.12'
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 apply plugin: 'com.google.gms.google-services'
