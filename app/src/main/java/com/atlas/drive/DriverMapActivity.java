@@ -1,4 +1,4 @@
-package com.simcoder.uber;
+package com.atlas.drive;
 
 import android.Manifest;
 import android.app.AlertDialog;

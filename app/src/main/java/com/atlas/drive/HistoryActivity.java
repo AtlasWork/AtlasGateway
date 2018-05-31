@@ -1,4 +1,4 @@
-package com.simcoder.uber;
+package com.atlas.drive;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
@@ -20,8 +20,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.simcoder.uber.historyRecyclerView.HistoryAdapter;
-import com.simcoder.uber.historyRecyclerView.HistoryObject;
+import com.atlas.drive.historyRecyclerView.HistoryAdapter;
+import com.atlas.drive.historyRecyclerView.HistoryObject;
 
 import org.json.JSONException;
 import org.json.JSONObject;

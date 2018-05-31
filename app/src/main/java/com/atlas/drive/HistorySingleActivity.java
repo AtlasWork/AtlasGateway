@@ -1,4 +1,4 @@
-package com.simcoder.uber;
+package com.atlas.drive;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -13,6 +13,9 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.atlas.drive.work.AtlasConfig;
+import com.atlas.drive.work.AtlasWorkConfiguration;
+import com.atlas.drive.services.AtlasService;
 import com.bumptech.glide.Glide;
 import com.directions.route.AbstractRouting;
 import com.directions.route.Route;
@@ -81,8 +84,8 @@ public class HistorySingleActivity extends AppCompatActivity implements OnMapRea
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history_single);
 
-        Intent intent = new Intent(this, PayPalService.class);
-        intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, config);
+        Intent intent = new Intent(this, AtlasService.class);
+        //intent.putExtra(AtlasService.EXTRA_ATLAS_CONFIGURATION, config);
         startService(intent);
 
         polylines = new ArrayList<>();
@@ -188,29 +191,44 @@ public class HistorySingleActivity extends AppCompatActivity implements OnMapRea
         mPay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                payPalPayment();
+                workPayment();
             }
         });
     }
 
     private int PAYPAL_REQUEST_CODE = 1;
-    private static PayPalConfiguration config = new PayPalConfiguration()
-            .environment(PayPalConfiguration.ENVIRONMENT_SANDBOX)
-            .clientId(PayPalConfig.PAYPAL_CLIENT_ID);
+    //private static PayPalConfiguration config = new PayPalConfiguration()
+      //     .environment(PayPalConfiguration.ENVIRONMENT_SANDBOX)
+        //    .clientId(PayPalConfig.PAYPAL_CLIENT_ID);
 
-    private void payPalPayment() {
-        PayPalPayment payment = new PayPalPayment(new BigDecimal(ridePrice), "USD", "Uber Ride",
-                PayPalPayment.PAYMENT_INTENT_SALE);
+    private static AtlasWorkConfiguration config = new AtlasWorkConfiguration()
+            .environment(AtlasWorkConfiguration.ENVIRONMENT_PRODUCTION)
+            .clientId(AtlasConfig.ATLAS_CLIENT_ID);
 
-        Intent intent = new Intent(this, PaymentActivity.class);
+    private void workPayment() {
 
-        intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, config);
-        intent.putExtra(PaymentActivity.EXTRA_PAYMENT, payment);
+        //WorkPayment payment = new WorkPayment(new BigDecimal(ridePrice), "WORK", "Atlas Drive", WorkPayment.PAYMENT_INTENT_SALE);
 
-        startActivityForResult(intent, PAYPAL_REQUEST_CODE);
+        //Intent intent = new Intent(this, PaymentActivity.class);
+
+        //intent.putExtra(AtlasService.EXTRA_PAYPAL_CONFIGURATION, config);
+        //intent.putExtra(WorkPaymentActivity.EXTRA_PAYMENT, payment);
+
+        //startActivityForResult(intent, PAYPAL_REQUEST_CODE);
     }
 
-    @Override
+    //private void payPalPayment() {
+    //   PayPalPayment payment = new PayPalPayment(new BigDecimal(ridePrice), "USD", "Uber Ride",
+    //            PayPalPayment.PAYMENT_INTENT_SALE);
+    //
+    //    Intent intent = new Intent(this, PaymentActivity.class);
+    //
+    //    intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, config);
+    //    intent.putExtra(PaymentActivity.EXTRA_PAYMENT, payment);
+    //
+    //    startActivityForResult(intent, PAYPAL_REQUEST_CODE);
+    //}
+
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == PAYPAL_REQUEST_CODE){
